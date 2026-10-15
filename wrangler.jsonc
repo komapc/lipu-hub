@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lipu-hub",
+  "compatibility_date": "2026-10-12",
+  "observability": {
+    "enabled": true
+  },
+  "routes": [
+    { "pattern": "lipu.dev", "custom_domain": true },
+    { "pattern": "www.lipu.dev", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./public"
+  }
+}
