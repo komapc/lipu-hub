@@ -10,6 +10,6 @@
     { "pattern": "www.lipu.dev", "custom_domain": true }
   ],
   "assets": {
-    "directory": "./public"
+    "directory": "./docs"
   }
 }
