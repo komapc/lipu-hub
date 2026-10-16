@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://lipu.dev/sitemap.xml
