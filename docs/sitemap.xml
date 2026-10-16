@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://lipu.dev/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://vortaro.lipu.dev/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://tradukilo.lipu.dev/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://echodrift.lipu.dev/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://hanzi.lipu.dev/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://ideon.lipu.dev/en/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://minco.lipu.dev/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://yearwheel.lipu.dev/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://gova.lipu.dev/</loc><lastmod>2026-10-16</lastmod></url>
 </urlset>
