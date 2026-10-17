@@ -1,0 +1,21 @@
+name: sites-check
+
+# Weekly smoke/SEO check of every site linked from the hub (status, title length,
+# description, canonical, robots.txt Sitemap line, sitemap). Also runs when the hub changes.
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  push:
+    branches: [main]
+    paths: ["docs/**", "scripts/check_sites.py", ".github/workflows/sites-check.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check_sites.py
