@@ -37,6 +37,7 @@
     h2 { font-size:1.05rem; margin:32px 0 12px; color:var(--muted); font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
     ul.small .card { padding:10px 14px; } ul.small .card span { font-size:.9rem; }
     details { margin-top:32px; } summary { cursor:pointer; color:var(--muted); font-size:1.05rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
+    summary h2 { display:inline; margin:0; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; }
     summary:hover { color:var(--accent); } details ul { margin-top:12px; }
     .card.feature { position:relative; }
     .card.feature:hover { border-color:transparent; background:linear-gradient(var(--card),var(--card)) padding-box, linear-gradient(135deg,#8b5cf6,#ec4899,#f59e0b,#10b981) border-box; }
@@ -54,25 +55,29 @@
   <main>
     <h1>lipu</h1>
     <p class="sub">Small open projects by <a href="https://github.com/komapc">komapc</a>: languages, linguistics and tools.</p>
-    <h2>Languages</h2>
-    <ul>
-        <li><a class="card" href="https://vortaro.lipu.dev/"><strong>Vortaro</strong><span>Ido–Esperanto dictionary, 37 000+ entries</span></a><a class="code" href="https://github.com/komapc/vortaro" rel="noopener">code</a></li>
-        <li><a class="card" href="https://tradukilo.lipu.dev/"><strong>Tradukilo</strong><span>Ido ↔ Esperanto machine translator (Apertium)</span></a><a class="code" href="https://github.com/komapc/ido-epo-translator" rel="noopener">code</a></li>
-        <li><a class="card" href="https://minco.lipu.dev/"><strong>min-co</strong><span>A minimal continuous constructed language</span></a><a class="code" href="https://github.com/komapc/contlang" rel="noopener">code</a></li>
-        <li><a class="card" href="https://hanzi.lipu.dev/"><strong>Hanzi-burst</strong><span>Learn Chinese characters by breaking them into radicals</span></a><a class="code" href="https://github.com/komapc/hanzi-burst" rel="noopener">code</a></li>
-        <li><a class="card" href="https://echodrift.lipu.dev/"><strong>EchoDrift</strong><span>Atlas of phonetic evolution</span></a><a class="code" href="https://github.com/komapc/phonomorph" rel="noopener">code</a></li>
-        <li><a class="card" href="https://komapc.github.io/apertium-ido-epo/"><strong>apertium-ido-epo</strong><span>Ido–Esperanto language pair for Apertium</span></a><a class="code" href="https://github.com/komapc/apertium-ido-epo" rel="noopener">code</a></li>
-        <li><a class="card" href="https://komapc.github.io/yaplikacija/"><strong>yaplikacija</strong><span>Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]</span></a><a class="code" href="https://github.com/komapc/yaplikacija" rel="noopener">code</a></li>
-    </ul>
-    <h2>Other</h2>
-    <ul>
-        <li><a class="card" href="https://ideon.lipu.dev/en/"><strong>Ideonology</strong><span>A theory of meaning measured against a precise standard</span></a><a class="code" href="https://github.com/komapc/ideon" rel="noopener">code</a></li>
-        <li><a class="card" href="https://yearwheel.lipu.dev/"><strong>YearWheel</strong><span>A year calendar that morphs between circle and square</span></a><a class="code" href="https://github.com/komapc/year-shape" rel="noopener">code</a></li>
-        <li><a class="card" href="https://gova.lipu.dev/"><strong>Gova</strong><span>Altimeter: measures height (web and Android app)</span></a><a class="code" href="https://github.com/komapc/gova" rel="noopener">code</a></li>
-        <li><a class="card feature" href="https://noamba.lipu.dev/"><strong>noamba</strong><span>Gender-inclusive Hebrew (עברית רב-מגדרית): an editor with extra letters for everyone. Made together with Kobi.</span><span class="demo" lang="he">ברוכ׊׉ הבא׊׉!</span></a><a class="code" href="https://github.com/komapc/noamba" rel="noopener">code</a></li>
-        <li><a class="card" href="https://shader.lipu.dev/"><strong>shAIder</strong><span>Describe a 3D shader in words; an AI writes the GLSL and renders it live</span></a><a class="code" href="https://github.com/komapc/shAIder" rel="noopener">code</a></li>
-        <li><a class="card" href="https://github.com/komapc/math-parser-comparison"><strong>Math parser comparison</strong><span>Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks</span></a><a class="code" href="https://github.com/komapc/math-parser-comparison" rel="noopener">code</a></li>
-    </ul>
+    <details open>
+      <summary><h2>Languages</h2></summary>
+      <ul>
+          <li><a class="card" href="https://vortaro.lipu.dev/"><strong>Vortaro</strong><span>Ido–Esperanto dictionary, 37 000+ entries</span></a><a class="code" href="https://github.com/komapc/vortaro" rel="noopener">code</a></li>
+          <li><a class="card" href="https://tradukilo.lipu.dev/"><strong>Tradukilo</strong><span>Ido ↔ Esperanto machine translator (Apertium)</span></a><a class="code" href="https://github.com/komapc/ido-epo-translator" rel="noopener">code</a></li>
+          <li><a class="card" href="https://minco.lipu.dev/"><strong>min-co</strong><span>A minimal continuous constructed language</span></a><a class="code" href="https://github.com/komapc/contlang" rel="noopener">code</a></li>
+          <li><a class="card" href="https://hanzi.lipu.dev/"><strong>Hanzi-burst</strong><span>Learn Chinese characters by breaking them into radicals</span></a><a class="code" href="https://github.com/komapc/hanzi-burst" rel="noopener">code</a></li>
+          <li><a class="card" href="https://echodrift.lipu.dev/"><strong>EchoDrift</strong><span>Atlas of phonetic evolution</span></a><a class="code" href="https://github.com/komapc/phonomorph" rel="noopener">code</a></li>
+          <li><a class="card" href="https://komapc.github.io/apertium-ido-epo/"><strong>apertium-ido-epo</strong><span>Ido–Esperanto language pair for Apertium</span></a><a class="code" href="https://github.com/komapc/apertium-ido-epo" rel="noopener">code</a></li>
+          <li><a class="card" href="https://komapc.github.io/yaplikacija/"><strong>yaplikacija</strong><span>Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]</span></a><a class="code" href="https://github.com/komapc/yaplikacija" rel="noopener">code</a></li>
+      </ul>
+    </details>
+    <details open>
+      <summary><h2>Other</h2></summary>
+      <ul>
+          <li><a class="card" href="https://ideon.lipu.dev/en/"><strong>Ideonology</strong><span>A theory of meaning measured against a precise standard</span></a><a class="code" href="https://github.com/komapc/ideon" rel="noopener">code</a></li>
+          <li><a class="card" href="https://yearwheel.lipu.dev/"><strong>YearWheel</strong><span>A year calendar that morphs between circle and square</span></a><a class="code" href="https://github.com/komapc/year-shape" rel="noopener">code</a></li>
+          <li><a class="card" href="https://gova.lipu.dev/"><strong>Gova</strong><span>Altimeter: measures height (web and Android app)</span></a><a class="code" href="https://github.com/komapc/gova" rel="noopener">code</a></li>
+          <li><a class="card feature" href="https://noamba.lipu.dev/"><strong>noamba</strong><span>Gender-inclusive Hebrew (עברית רב-מגדרית): an editor with extra letters for everyone. Made together with Kobi.</span><span class="demo" lang="he">ברוכ׊׉ הבא׊׉!</span></a><a class="code" href="https://github.com/komapc/noamba" rel="noopener">code</a></li>
+          <li><a class="card" href="https://shader.lipu.dev/"><strong>shAIder</strong><span>Describe a 3D shader in words; an AI writes the GLSL and renders it live</span></a><a class="code" href="https://github.com/komapc/shAIder" rel="noopener">code</a></li>
+          <li><a class="card" href="https://github.com/komapc/math-parser-comparison"><strong>Math parser comparison</strong><span>Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks</span></a><a class="code" href="https://github.com/komapc/math-parser-comparison" rel="noopener">code</a></li>
+      </ul>
+    </details>
     <details>
       <summary>Publications</summary>
       <ul class="small">
