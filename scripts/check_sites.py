@@ -14,7 +14,7 @@ import urllib.request
 SITES = [
     "https://lipu.dev/", "https://vortaro.lipu.dev/", "https://tradukilo.lipu.dev/",
     "https://echodrift.lipu.dev/", "https://hanzi.lipu.dev/", "https://ideon.lipu.dev/en/",
-    "https://minco.lipu.dev/", "https://yearwheel.lipu.dev/", "https://gova.lipu.dev/", "https://noamba.lipu.dev/", "https://shader.lipu.dev/",
+    "https://minco.lipu.dev/", "https://yearwheel.lipu.dev/", "https://gova.lipu.dev/", "https://noamba.lipu.dev/", "https://shader.lipu.dev/", "https://yaplikacija.lipu.dev/",
 ]
 UA = "Mozilla/5.0 (compatible; lipu-sites-check)"
 MAX_TITLE = 60
