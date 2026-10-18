@@ -30,7 +30,7 @@
     h1 { font-size:2rem; margin:0 0 4px; } p.sub { color:var(--muted); margin:0 0 28px; }
     ul { list-style:none; padding:0; margin:0; display:grid; gap:12px; }
     li { position:relative; display:flex; align-items:stretch; }
-    .card { flex:1; display:flex; flex-direction:column; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:12px; color:inherit; text-decoration:none; }
+    .card { position:relative; cursor:pointer; flex:1; display:flex; flex-direction:column; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:12px; color:inherit; text-decoration:none; }
     .card:hover { border-color:var(--accent); } .card strong { color:var(--accent); } .card span { color:var(--muted); font-size:.95rem; }
     ul:not(.small) .card { padding-right:64px; }
     .code { position:absolute; top:13px; right:16px; z-index:1; font-size:.85rem; color:var(--muted); }
@@ -47,12 +47,16 @@
     .card.feature:hover { box-shadow:0 4px 18px rgba(139,92,246,.25); }
     p.soon { color:var(--muted); margin:0; font-size:.95rem; }
     nav.links { display:flex; flex-wrap:wrap; gap:8px 20px; margin:0; }
-    pre.geek { margin:0; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:12px; white-space:pre-wrap; overflow-wrap:anywhere; font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    pre.geek { margin:0; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:12px; cursor:help; white-space:pre-wrap; overflow-wrap:anywhere; font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     footer { margin-top:36px; color:var(--muted); font-size:.9rem; } a { color:var(--accent); }
     nav.lang { display:flex; justify-content:flex-end; gap:4px; margin:-28px 0 12px; font-size:.8rem; }
     nav.lang button { all:unset; cursor:pointer; padding:2px 6px; border-radius:6px; color:var(--muted); letter-spacing:.05em; }
     nav.lang button:hover { color:var(--accent); } nav.lang button[aria-pressed="true"] { color:var(--fg); background:var(--card); box-shadow:inset 0 0 0 1px var(--line); font-weight:600; }
     nav.lang button:focus-visible { outline:2px solid var(--accent); }
+    .card a.name { color:inherit; text-decoration:none; }
+    .card a.name::after { content:""; position:absolute; inset:0; border-radius:12px; }
+    .card a.name:focus-visible { outline:none; } .card a.name:focus-visible::after { outline:2px solid var(--accent); }
+    .card span { position:relative; z-index:1; cursor:text; }
   </style>
 </head>
 <body>
@@ -63,35 +67,35 @@
     <details>
       <summary><h2>Languages</h2></summary>
       <ul>
-          <li><a class="card" href="https://vortaro.lipu.dev/"><strong>Vortaro</strong><span>Ido–Esperanto dictionary, 37 000+ entries</span></a><a class="code" href="https://github.com/komapc/vortaro" rel="noopener">code</a></li>
-          <li><a class="card" href="https://tradukilo.lipu.dev/"><strong>Tradukilo</strong><span>Ido ↔ Esperanto machine translator (Apertium)</span></a><a class="code" href="https://github.com/komapc/ido-epo-translator" rel="noopener">code</a></li>
-          <li><a class="card" href="https://minco.lipu.dev/"><strong>min-co</strong><span>A minimal continuous constructed language</span></a><a class="code" href="https://github.com/komapc/contlang" rel="noopener">code</a></li>
-          <li><a class="card" href="https://hanzi.lipu.dev/"><strong>Hanzi-burst</strong><span>Learn Chinese characters by breaking them into radicals</span></a><a class="code" href="https://github.com/komapc/hanzi-burst" rel="noopener">code</a></li>
-          <li><a class="card" href="https://echodrift.lipu.dev/"><strong>EchoDrift</strong><span>Atlas of phonetic evolution</span></a><a class="code" href="https://github.com/komapc/phonomorph" rel="noopener">code</a></li>
-          <li><a class="card" href="https://komapc.github.io/yaplikacija/"><strong>yaplikacija</strong><span>Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]</span></a><a class="code" href="https://github.com/komapc/yaplikacija" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://vortaro.lipu.dev/"><strong>Vortaro</strong></a><span>Ido–Esperanto dictionary, 37 000+ entries</span></div><a class="code" href="https://github.com/komapc/vortaro" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://tradukilo.lipu.dev/"><strong>Tradukilo</strong></a><span>Ido ↔ Esperanto machine translator (Apertium)</span></div><a class="code" href="https://github.com/komapc/ido-epo-translator" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://minco.lipu.dev/"><strong>min-co</strong></a><span>A minimal continuous constructed language</span></div><a class="code" href="https://github.com/komapc/contlang" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://hanzi.lipu.dev/"><strong>Hanzi-burst</strong></a><span>Learn Chinese characters by breaking them into radicals</span></div><a class="code" href="https://github.com/komapc/hanzi-burst" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://echodrift.lipu.dev/"><strong>EchoDrift</strong></a><span>Atlas of phonetic evolution</span></div><a class="code" href="https://github.com/komapc/phonomorph" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://komapc.github.io/yaplikacija/"><strong>yaplikacija</strong></a><span>Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]</span></div><a class="code" href="https://github.com/komapc/yaplikacija" rel="noopener">code</a></li>
       </ul>
     </details>
     <details>
       <summary><h2>Other</h2></summary>
       <ul>
-          <li><a class="card" href="https://ideon.lipu.dev/en/"><strong>Ideonology</strong><span>A theory of meaning measured against a precise standard</span></a><a class="code" href="https://github.com/komapc/ideon" rel="noopener">code</a></li>
-          <li><a class="card" href="https://yearwheel.lipu.dev/"><strong>YearWheel</strong><span>A year calendar that morphs between circle and square</span></a><a class="code" href="https://github.com/komapc/year-shape" rel="noopener">code</a></li>
-          <li><a class="card" href="https://gova.lipu.dev/"><strong>Gova</strong><span>Altimeter: measures height (web and Android app)</span></a><a class="code" href="https://github.com/komapc/gova" rel="noopener">code</a></li>
-          <li><a class="card feature" href="https://noamba.lipu.dev/"><strong>noamba</strong><span>Gender-inclusive Hebrew (עברית רב-מגדרית): an editor with extra letters for everyone. Made together with Kobi.</span><span class="demo" lang="he">ברוכ׊׉ הבא׊׉!</span></a><a class="code" href="https://github.com/komapc/noamba" rel="noopener">code</a></li>
-          <li><a class="card" href="https://shader.lipu.dev/"><strong>shAIder</strong><span>Describe a 3D shader in words; an AI writes the GLSL and renders it live</span></a><a class="code" href="https://github.com/komapc/shAIder" rel="noopener">code</a></li>
-          <li><a class="card" href="https://github.com/komapc/math-parser-comparison"><strong>Math parser comparison</strong><span>Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks</span></a><a class="code" href="https://github.com/komapc/math-parser-comparison" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://ideon.lipu.dev/en/"><strong>Ideonology</strong></a><span>A theory of meaning measured against a precise standard</span></div><a class="code" href="https://github.com/komapc/ideon" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://yearwheel.lipu.dev/"><strong>YearWheel</strong></a><span>A year calendar that morphs between circle and square</span></div><a class="code" href="https://github.com/komapc/year-shape" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://gova.lipu.dev/"><strong>Gova</strong></a><span>Altimeter: measures height (web and Android app)</span></div><a class="code" href="https://github.com/komapc/gova" rel="noopener">code</a></li>
+          <li><div class="card feature"><a class="name" href="https://noamba.lipu.dev/"><strong>noamba</strong></a><span>Gender-inclusive Hebrew (עברית רב-מגדרית): an editor with extra letters for everyone. Made together with Kobi.</span><span class="demo" lang="he">ברוכ׊׉ הבא׊׉!</span></div><a class="code" href="https://github.com/komapc/noamba" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://shader.lipu.dev/"><strong>shAIder</strong></a><span>Describe a 3D shader in words; an AI writes the GLSL and renders it live</span></div><a class="code" href="https://github.com/komapc/shAIder" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://github.com/komapc/math-parser-comparison"><strong>Math parser comparison</strong></a><span>Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks</span></div><a class="code" href="https://github.com/komapc/math-parser-comparison" rel="noopener">code</a></li>
       </ul>
     </details>
     <details>
       <summary>Publications</summary>
       <ul class="small">
-        <li><a class="card" href="https://habr.com/ru/articles/851370/"><strong>Алфавиты википедии</strong><span>Habr, 2024</span></a></li>
-        <li><a class="card" href="https://habr.com/ru/articles/810893/"><strong>Википедии на искусственных языках</strong><span>Habr, 2024</span></a></li>
+        <li><div class="card"><a class="name" href="https://habr.com/ru/articles/851370/"><strong>Алфавиты википедии</strong></a><span>Habr, 2024</span></div></li>
+        <li><div class="card"><a class="name" href="https://habr.com/ru/articles/810893/"><strong>Википедии на искусственных языках</strong></a><span>Habr, 2024</span></div></li>
       </ul>
     </details>
     <details>
       <summary><h2>Geek code</h2></summary>
-          <pre class="geek">-----BEGIN GEEK CODE BLOCK-----
+          <pre class="geek" id="geek" title="Geek Code v3.12: a 1990s way to describe yourself in a few symbols. Each token is a category; + and − show how much, ? means &quot;don't know&quot;. Full spec: geekcode.com">-----BEGIN GEEK CODE BLOCK-----
 Version: 3.12
 GCS/GM d? s-:-- a C++++ UL+++ P-- L++ E--- W+++ w- O- M- V-- PS+++ PE t--- R- !tv b+ DI- D G e++ y+
 ------END GEEK CODE BLOCK------
@@ -102,13 +106,15 @@ GCS/GM d? s-:-- a C++++ UL+++ P-- L++ E--- W+++ w- O- M- V-- PS+++ PE t--- R- !t
   <script>
   // Language switch: the HTML is English (what crawlers see); other languages are swapped in from this table, keyed by the English text.
   (function () {
-    var T = {"sub": {"io": "Mikra apertita projeti da <a href=\"https://github.com/komapc\">komapc</a>: lingui, lingvistiko ed utensili.", "eo": "Malgrandaj malfermaj projektoj de <a href=\"https://github.com/komapc\">komapc</a>: lingvoj, lingvistiko kaj iloj.", "tok": "pali lili pi sona toki en ilo tan jan <a href=\"https://github.com/komapc\">komapc</a>."}, "Languages": {"io": "Lingui", "eo": "Lingvoj", "tok": "toki"}, "Other": {"io": "Altra", "eo": "Aliaj", "tok": "ante"}, "Publications": {"io": "Publikaji", "eo": "Publikaĵoj", "tok": "lipu"}, "Geek code": {"io": "Geek-kodexo", "eo": "Geek-kodo", "tok": "jan nasa pi ilo toki"}, "code": {"io": "kodexo", "eo": "kodo", "tok": "toki ilo"}, "Ido–Esperanto dictionary, 37 000+ entries": {"io": "Vortaro Ido–Esperanto, plu 37 000 artikli", "eo": "Vortaro ido–esperanta, pli ol 37 000 artikoloj", "tok": "lipu nimi: Ido en Esperanto"}, "Ido ↔ Esperanto machine translator (Apertium)": {"io": "Mashina tradukilo Ido ↔ Esperanto (Apertium)", "eo": "Maŝina tradukilo ido ↔ esperanto (Apertium)", "tok": "ilo ante toki: Ido ↔ Esperanto (Apertium)"}, "A minimal continuous constructed language": {"io": "Minimala kontinua konstruktita linguo", "eo": "Minimuma kontinua konstruita lingvo", "tok": "toki pali lili"}, "Learn Chinese characters by breaking them into radicals": {"io": "Lernez chinana karakteri per dividar los en radikali", "eo": "Lernu ĉinajn signojn malkonstruante ilin en radikalojn", "tok": "o kama sona e sitelen Sonko: o kipisi e ona"}, "Atlas of phonetic evolution": {"io": "Atlaso di fonetika evoluco", "eo": "Atlaso de fonetika evoluo", "tok": "lipu sitelen pi ante kalama toki"}, "Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]": {"io": "Exercilo di pronunco por rusa Ы [ɨ] e hebrea/araba Ain [ʕ]", "eo": "Ekzercilo pri elparolo de rusa Ы [ɨ] kaj hebrea/araba Ain [ʕ]", "tok": "ilo pi kama sona kalama: Ы [ɨ] pi toki Lasija en Ain [ʕ] pi toki Heperu en toki Alapi"}, "A theory of meaning measured against a precise standard": {"io": "Teorio pri senco mezurita segun preciza standardo", "eo": "Teorio pri signifo mezurita laŭ preciza normo", "tok": "sona pi kon nimi"}, "A year calendar that morphs between circle and square": {"io": "Yarala kalendario qua transformesas inter cirklo e kvarangulo", "eo": "Jara kalendaro, kiu transformiĝas inter cirklo kaj kvadrato", "tok": "sitelen tenpo pi suno ale. ona li ante lon sike en poki"}, "Altimeter: measures height (web and Android app)": {"io": "Altimetro: mezuras alteso (web e Android-apliko)", "eo": "Altimetro: mezuras altecon (retejo kaj Android-apo)", "tok": "ilo pi sona sewi lon ilo sona en Android"}, "Gender-inclusive Hebrew (עברית רב-מגדרית): an editor with extra letters for everyone. Made together with Kobi.": {"io": "Gendro-inkluziva hebrea (עברית רב-מגדרית): redaktilo kun extra literi por omnu. Facita kune kun Kobi.", "eo": "Ĝenro-inkluziva hebrea (עברית רב-מגדרית): redaktilo kun aldonaj literoj por ĉiuj. Farita kune kun Kobi.", "tok": "toki Heperu pi jan ale: ilo sitelen. mi en jan Kobi li pali e ona."}, "Describe a 3D shader in words; an AI writes the GLSL and renders it live": {"io": "Deskriptez 3D-shader per vorti: IA skribas la GLSL e montras lo vivante", "eo": "Priskribu 3D-shader per vortoj: AI skribas GLSL kaj montras ĝin viva", "tok": "o toki e ilo sitelen 3D. ilo AI li pali e GLSL."}, "Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks": {"io": "15 strategii por analizo di expresaji en C++, Rust, Python e Haskell, kun fuzzing e benchmarki", "eo": "15 strategioj por analizi esprimojn en C++, Rust, Python kaj Haskell, kun fuzzing kaj komparaj testoj", "tok": "nasin mute pi kipisi nimi nanpa lon C++, Rust, Python, Haskell"}};
+    var T = {"sub": {"io": "Mikra apertita projeti da <a href=\"https://github.com/komapc\">komapc</a>: lingui, lingvistiko ed utensili.", "eo": "Malgrandaj malfermaj projektoj de <a href=\"https://github.com/komapc\">komapc</a>: lingvoj, lingvistiko kaj iloj.", "tok": "pali lili pi sona toki en ilo tan jan <a href=\"https://github.com/komapc\">komapc</a>."}, "Languages": {"io": "Lingui", "eo": "Lingvoj", "tok": "toki"}, "Other": {"io": "Altra", "eo": "Aliaj", "tok": "ante"}, "Publications": {"io": "Publikaji", "eo": "Publikaĵoj", "tok": "lipu"}, "Geek code": {"io": "Geek-kodexo", "eo": "Geek-kodo", "tok": "jan nasa pi ilo toki"}, "code": {"io": "kodexo", "eo": "kodo", "tok": "toki ilo"}, "Ido–Esperanto dictionary, 37 000+ entries": {"io": "Vortaro Ido–Esperanto, plu 37 000 artikli", "eo": "Vortaro ido–esperanta, pli ol 37 000 artikoloj", "tok": "lipu nimi: Ido en Esperanto"}, "Ido ↔ Esperanto machine translator (Apertium)": {"io": "Mashina tradukilo Ido ↔ Esperanto (Apertium)", "eo": "Maŝina tradukilo ido ↔ esperanto (Apertium)", "tok": "ilo ante toki: Ido ↔ Esperanto (Apertium)"}, "A minimal continuous constructed language": {"io": "Minimala kontinua konstruktita linguo", "eo": "Minimuma kontinua konstruita lingvo", "tok": "toki pali lili"}, "Learn Chinese characters by breaking them into radicals": {"io": "Lernez chinana karakteri per dividar los en radikali", "eo": "Lernu ĉinajn signojn malkonstruante ilin en radikalojn", "tok": "o kama sona e sitelen Sonko: o kipisi e ona"}, "Atlas of phonetic evolution": {"io": "Atlaso di fonetika evoluco", "eo": "Atlaso de fonetika evoluo", "tok": "lipu sitelen pi ante kalama toki"}, "Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]": {"io": "Exercilo di pronunco por rusa Ы [ɨ] e hebrea/araba Ain [ʕ]", "eo": "Ekzercilo pri elparolo de rusa Ы [ɨ] kaj hebrea/araba Ain [ʕ]", "tok": "ilo pi kama sona kalama: Ы [ɨ] pi toki Lasija en Ain [ʕ] pi toki Heperu en toki Alapi"}, "A theory of meaning measured against a precise standard": {"io": "Teorio pri senco mezurita segun preciza standardo", "eo": "Teorio pri signifo mezurita laŭ preciza normo", "tok": "sona pi kon nimi"}, "A year calendar that morphs between circle and square": {"io": "Yarala kalendario qua transformesas inter cirklo e kvarangulo", "eo": "Jara kalendaro, kiu transformiĝas inter cirklo kaj kvadrato", "tok": "sitelen tenpo pi suno ale. ona li ante lon sike en poki"}, "Altimeter: measures height (web and Android app)": {"io": "Altimetro: mezuras alteso (web e Android-apliko)", "eo": "Altimetro: mezuras altecon (retejo kaj Android-apo)", "tok": "ilo pi sona sewi lon ilo sona en Android"}, "Gender-inclusive Hebrew (עברית רב-מגדרית): an editor with extra letters for everyone. Made together with Kobi.": {"io": "Gendro-inkluziva hebrea (עברית רב-מגדרית): redaktilo kun extra literi por omnu. Facita kune kun Kobi.", "eo": "Ĝenro-inkluziva hebrea (עברית רב-מגדרית): redaktilo kun aldonaj literoj por ĉiuj. Farita kune kun Kobi.", "tok": "toki Heperu pi jan ale: ilo sitelen. mi en jan Kobi li pali e ona."}, "Describe a 3D shader in words; an AI writes the GLSL and renders it live": {"io": "Deskriptez 3D-shader per vorti: IA skribas la GLSL e montras lo vivante", "eo": "Priskribu 3D-shader per vortoj: AI skribas GLSL kaj montras ĝin viva", "tok": "o toki e ilo sitelen 3D. ilo AI li pali e GLSL."}, "Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks": {"io": "15 strategii por analizo di expresaji en C++, Rust, Python e Haskell, kun fuzzing e benchmarki", "eo": "15 strategioj por analizi esprimojn en C++, Rust, Python kaj Haskell, kun fuzzing kaj komparaj testoj", "tok": "nasin mute pi kipisi nimi nanpa lon C++, Rust, Python, Haskell"}, "hint": {"io": "Geek Code v3.12: metodo ek la yari 1990 por deskriptar su per kelka simboli. Singla grupo esas kategorio; + e − montras quanto, ? signifikas \"me ne savas\". Kompleta specifo: geekcode.com", "eo": "Geek Code v3.12: metodo de la 1990-aj jaroj por priskribi sin per kelkaj simboloj. Ĉiu grupo estas kategorio; + kaj − montras gradon, ? signifas \"mi ne scias\". Plena specifo: geekcode.com", "tok": "sitelen ni li toki e jan lon nasin ilo. sitelen + en − li toki e suli. ? li toki e sona ala. geekcode.com"}};
     var targets = [].slice.call(document.querySelectorAll('[data-k], summary, .card span:not(.demo), a.code')).map(function (el) {
       var t = el.matches('summary') ? (el.querySelector('h2') || el) : el;
       return { el: t, en: t.innerHTML, key: t.dataset.k || t.textContent.trim() };
     });
+    var geek = document.getElementById('geek'); geek.dataset.en = geek.title;
     function apply(l) {
       targets.forEach(function (x) { var e = T[x.key]; x.el.innerHTML = l !== 'en' && e && e[l] ? e[l] : x.en; });
+      var g = document.getElementById('geek'); g.title = l !== 'en' && T.hint[l] ? T.hint[l] : g.dataset.en;
       document.documentElement.lang = l;
       [].forEach.call(document.querySelectorAll('nav.lang button'), function (b) { b.setAttribute('aria-pressed', b.dataset.l === l); });
     }
@@ -116,6 +122,11 @@ GCS/GM d? s-:-- a C++++ UL+++ P-- L++ E--- W+++ w- O- M- V-- PS+++ PE t--- R- !t
     var guess = (navigator.language || 'en').split('-')[0].toLowerCase();
     var cur = ['en', 'io', 'eo', 'tok'].indexOf(saved) >= 0 ? saved : ['io', 'eo', 'tok'].indexOf(guess) >= 0 ? guess : 'en';
     apply(cur);
+    // card text stays selectable (it sits above the card-wide link); a plain click on it still opens the project
+    document.addEventListener('click', function (e) {
+      var c = e.target.closest('.card'); if (!c || e.target.closest('a') || !getSelection().isCollapsed) return;
+      c.querySelector('a.name').click();
+    });
     document.querySelector('nav.lang').addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b) return; apply(b.dataset.l); try { localStorage.setItem('lang', b.dataset.l); } catch (err) {}
     });
