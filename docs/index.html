@@ -36,6 +36,11 @@
     ul.small .card { padding:10px 14px; } ul.small .card span { font-size:.9rem; }
     details { margin-top:32px; } summary { cursor:pointer; color:var(--muted); font-size:1.05rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
     summary:hover { color:var(--accent); } details ul { margin-top:12px; }
+    .card.feature { position:relative; border-color:transparent; background:linear-gradient(var(--card),var(--card)) padding-box, linear-gradient(135deg,#8b5cf6,#ec4899,#f59e0b,#10b981) border-box; border:1.5px solid transparent; padding:18px 18px 16px; }
+    .card.feature strong { font-size:1.15rem; background:linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .card.feature .demo { margin-top:8px; font-size:1.25rem; color:var(--fg); direction:rtl; text-align:right; }
+    .card.feature:hover { box-shadow:0 4px 18px rgba(139,92,246,.25); }
+    p.soon { color:var(--muted); margin:0; font-size:.95rem; }
     nav.links { display:flex; flex-wrap:wrap; gap:8px 20px; margin:0; }
     pre.geek { margin:0; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow-x:auto; font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     footer { margin-top:36px; color:var(--muted); font-size:.9rem; } a { color:var(--accent); }
@@ -60,9 +65,17 @@
         <li><a class="card" href="https://ideon.lipu.dev/en/"><strong>Ideonology</strong><span>A theory of meaning measured against a precise standard</span></a><a class="code" href="https://github.com/komapc/ideon" rel="noopener">code</a></li>
         <li><a class="card" href="https://yearwheel.lipu.dev/"><strong>YearWheel</strong><span>A year calendar that morphs between circle and square</span></a><a class="code" href="https://github.com/komapc/year-shape" rel="noopener">code</a></li>
         <li><a class="card" href="https://gova.lipu.dev/"><strong>Gova</strong><span>Altimeter: measures height (web and Android app)</span></a><a class="code" href="https://github.com/komapc/gova" rel="noopener">code</a></li>
-        <li><a class="card" href="https://noamba.lipu.dev/"><strong>noamba</strong><span>Gender-inclusive Hebrew (עברית רב-מגדרית), made together with Kobi</span></a><a class="code" href="https://github.com/komapc/noamba" rel="noopener">code</a></li>
+        <li><a class="card feature" href="https://noamba.lipu.dev/"><strong>noamba</strong><span>Gender-inclusive Hebrew (עברית רב-מגדרית): an editor with extra letters for everyone. Made together with Kobi.</span><span class="demo" lang="he">ברוכ׊׉ הבא׊׉!</span></a><a class="code" href="https://github.com/komapc/noamba" rel="noopener">code</a></li>
         <li><a class="card" href="https://github.com/komapc/math-parser-comparison"><strong>Math parser comparison</strong><span>Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks</span></a><a class="code" href="https://github.com/komapc/math-parser-comparison" rel="noopener">code</a></li>
     </ul>
+    <h2>Publications</h2>
+    <p class="soon">Coming soon.</p>
+    <details>
+      <summary>More</summary>
+      <ul class="small">
+        <li><a class="card" href="https://github.com/komapc/kurcaf"><strong>Kurcaf</strong><span>Latvian learning app: flashcards, listening, dialogues</span></a><a class="code" href="https://github.com/komapc/kurcaf" rel="noopener">code</a></li>
+      </ul>
+    </details>
     <h2>Links</h2>
     <nav class="links">
       <a href="https://github.com/komapc">GitHub</a>
