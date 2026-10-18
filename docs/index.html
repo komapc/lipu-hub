@@ -49,12 +49,17 @@
     nav.links { display:flex; flex-wrap:wrap; gap:8px 20px; margin:0; }
     pre.geek { margin:0; padding:14px 16px; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow-x:auto; font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     footer { margin-top:36px; color:var(--muted); font-size:.9rem; } a { color:var(--accent); }
+    nav.lang { display:flex; justify-content:flex-end; gap:4px; margin:-28px 0 12px; font-size:.8rem; }
+    nav.lang button { all:unset; cursor:pointer; padding:2px 6px; border-radius:6px; color:var(--muted); letter-spacing:.05em; }
+    nav.lang button:hover { color:var(--accent); } nav.lang button[aria-pressed="true"] { color:var(--fg); background:var(--card); box-shadow:inset 0 0 0 1px var(--line); font-weight:600; }
+    nav.lang button:focus-visible { outline:2px solid var(--accent); }
   </style>
 </head>
 <body>
   <main>
+    <nav class="lang" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="io">IO</button><button type="button" data-l="eo">EO</button><button type="button" data-l="tok">TP</button></nav>
     <h1>lipu</h1>
-    <p class="sub">Small open projects by <a href="https://github.com/komapc">komapc</a>: languages, linguistics and tools.</p>
+    <p class="sub" data-k="sub">Small open projects by <a href="https://github.com/komapc">komapc</a>: languages, linguistics and tools.</p>
     <details>
       <summary><h2>Languages</h2></summary>
       <ul>
@@ -94,5 +99,27 @@ GCS/GM d? s-:-- a C++++ UL+++ P-- L++ E--- W+++ w- O- M- V-- PS+++ PE t--- R- !t
     </details>
     <footer>© komapc · <a href="https://github.com/komapc" rel="noopener">GitHub</a> · <a href="https://www.chess.com/member/komapc" rel="noopener">chess.com</a> · <a href="https://ru.wikipedia.org/wiki/Участник:Komap" rel="noopener">Wikipedia</a> <a href="https://www.linkedin.com/in/mark-kahn-9309393/" rel="me noopener" aria-label="LinkedIn" title="LinkedIn" style="text-decoration:none;color:var(--muted);opacity:.5">·</a></footer>
   </main>
+  <script>
+  // Language switch: the HTML is English (what crawlers see); other languages are swapped in from this table, keyed by the English text.
+  (function () {
+    var T = {"sub": {"io": "Mikra apertita projeti da <a href=\"https://github.com/komapc\">komapc</a>: lingui, lingvistiko ed utensili.", "eo": "Malgrandaj malfermaj projektoj de <a href=\"https://github.com/komapc\">komapc</a>: lingvoj, lingvistiko kaj iloj.", "tok": "pali lili pi sona toki en ilo tan jan <a href=\"https://github.com/komapc\">komapc</a>."}, "Languages": {"io": "Lingui", "eo": "Lingvoj", "tok": "toki"}, "Other": {"io": "Altra", "eo": "Aliaj", "tok": "ante"}, "Publications": {"io": "Publikaji", "eo": "Publikaĵoj", "tok": "lipu"}, "Geek code": {"io": "Geek-kodexo", "eo": "Geek-kodo", "tok": "jan nasa pi ilo toki"}, "code": {"io": "kodexo", "eo": "kodo", "tok": "toki ilo"}, "Ido–Esperanto dictionary, 37 000+ entries": {"io": "Vortaro Ido–Esperanto, plu 37 000 artikli", "eo": "Vortaro ido–esperanta, pli ol 37 000 artikoloj", "tok": "lipu nimi: Ido en Esperanto"}, "Ido ↔ Esperanto machine translator (Apertium)": {"io": "Mashina tradukilo Ido ↔ Esperanto (Apertium)", "eo": "Maŝina tradukilo ido ↔ esperanto (Apertium)", "tok": "ilo ante toki: Ido ↔ Esperanto (Apertium)"}, "A minimal continuous constructed language": {"io": "Minimala kontinua konstruktita linguo", "eo": "Minimuma kontinua konstruita lingvo", "tok": "toki pali lili"}, "Learn Chinese characters by breaking them into radicals": {"io": "Lernez chinana karakteri per dividar los en radikali", "eo": "Lernu ĉinajn signojn malkonstruante ilin en radikalojn", "tok": "o kama sona e sitelen Sonko: o kipisi e ona"}, "Atlas of phonetic evolution": {"io": "Atlaso di fonetika evoluco", "eo": "Atlaso de fonetika evoluo", "tok": "lipu sitelen pi ante kalama toki"}, "Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]": {"io": "Exercilo di pronunco por rusa Ы [ɨ] e hebrea/araba Ain [ʕ]", "eo": "Ekzercilo pri elparolo de rusa Ы [ɨ] kaj hebrea/araba Ain [ʕ]", "tok": "ilo pi kama sona kalama: Ы [ɨ] pi toki Lasija en Ain [ʕ] pi toki Heperu en toki Alapi"}, "A theory of meaning measured against a precise standard": {"io": "Teorio pri senco mezurita segun preciza standardo", "eo": "Teorio pri signifo mezurita laŭ preciza normo", "tok": "sona pi kon nimi"}, "A year calendar that morphs between circle and square": {"io": "Yarala kalendario qua transformesas inter cirklo e kvarangulo", "eo": "Jara kalendaro, kiu transformiĝas inter cirklo kaj kvadrato", "tok": "sitelen tenpo pi suno ale. ona li ante lon sike en poki"}, "Altimeter: measures height (web and Android app)": {"io": "Altimetro: mezuras alteso (web e Android-apliko)", "eo": "Altimetro: mezuras altecon (retejo kaj Android-apo)", "tok": "ilo pi sona sewi lon ilo sona en Android"}, "Gender-inclusive Hebrew (עברית רב-מגדרית): an editor with extra letters for everyone. Made together with Kobi.": {"io": "Gendro-inkluziva hebrea (עברית רב-מגדרית): redaktilo kun extra literi por omnu. Facita kune kun Kobi.", "eo": "Ĝenro-inkluziva hebrea (עברית רב-מגדרית): redaktilo kun aldonaj literoj por ĉiuj. Farita kune kun Kobi.", "tok": "toki Heperu pi jan ale: ilo sitelen. mi en jan Kobi li pali e ona."}, "Describe a 3D shader in words; an AI writes the GLSL and renders it live": {"io": "Deskriptez 3D-shader per vorti: IA skribas la GLSL e montras lo vivante", "eo": "Priskribu 3D-shader per vortoj: AI skribas GLSL kaj montras ĝin viva", "tok": "o toki e ilo sitelen 3D. ilo AI li pali e GLSL."}, "Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks": {"io": "15 strategii por analizo di expresaji en C++, Rust, Python e Haskell, kun fuzzing e benchmarki", "eo": "15 strategioj por analizi esprimojn en C++, Rust, Python kaj Haskell, kun fuzzing kaj komparaj testoj", "tok": "nasin mute pi kipisi nimi nanpa lon C++, Rust, Python, Haskell"}};
+    var targets = [].slice.call(document.querySelectorAll('[data-k], summary, .card span:not(.demo), a.code')).map(function (el) {
+      var t = el.matches('summary') ? (el.querySelector('h2') || el) : el;
+      return { el: t, en: t.innerHTML, key: t.dataset.k || t.textContent.trim() };
+    });
+    function apply(l) {
+      targets.forEach(function (x) { var e = T[x.key]; x.el.innerHTML = l !== 'en' && e && e[l] ? e[l] : x.en; });
+      document.documentElement.lang = l;
+      [].forEach.call(document.querySelectorAll('nav.lang button'), function (b) { b.setAttribute('aria-pressed', b.dataset.l === l); });
+    }
+    var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+    var guess = (navigator.language || 'en').split('-')[0].toLowerCase();
+    var cur = ['en', 'io', 'eo', 'tok'].indexOf(saved) >= 0 ? saved : ['io', 'eo', 'tok'].indexOf(guess) >= 0 ? guess : 'en';
+    apply(cur);
+    document.querySelector('nav.lang').addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return; apply(b.dataset.l); try { localStorage.setItem('lang', b.dataset.l); } catch (err) {}
+    });
+  })();
+  </script>
 </body>
 </html>
