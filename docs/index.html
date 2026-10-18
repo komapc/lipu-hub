@@ -38,7 +38,7 @@
     ul.small .card { padding:10px 14px; } ul.small .card span { font-size:.9rem; }
     details { margin-top:32px; } summary { cursor:pointer; color:var(--muted); font-size:1.05rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
     summary h2 { display:inline; margin:0; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; }
-    summary:hover { color:var(--accent); } details ul { margin-top:12px; }
+    summary:hover { color:var(--accent); } details ul, details pre { margin-top:12px; }
     .card.feature { position:relative; }
     .card.feature:hover { border-color:transparent; background:linear-gradient(var(--card),var(--card)) padding-box, linear-gradient(135deg,#8b5cf6,#ec4899,#f59e0b,#10b981) border-box; }
     .card.feature strong { font-size:1.15rem; background:linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); -webkit-background-clip:text; background-clip:text; color:transparent; }
@@ -85,12 +85,14 @@
         <li><a class="card" href="https://habr.com/ru/articles/810893/"><strong>Википедии на искусственных языках</strong><span>Habr, 2024</span></a></li>
       </ul>
     </details>
-    <h2>Geek code</h2>
-    <pre class="geek">-----BEGIN GEEK CODE BLOCK-----
+    <details>
+      <summary><h2>Geek code</h2></summary>
+          <pre class="geek">-----BEGIN GEEK CODE BLOCK-----
 Version: 3.12
 GCS/GM d? s-:-- a C++++ UL+++ P-- L++ E--- W+++ w- O- M- V-- PS+++ PE t--- R- !tv b+ DI- D G e++ y+
 ------END GEEK CODE BLOCK------
 + chess</pre>
+    </details>
     <footer>© komapc · <a href="https://github.com/komapc" rel="noopener">GitHub</a> · <a href="https://www.chess.com/member/komapc" rel="noopener">chess.com</a> · <a href="https://ru.wikipedia.org/wiki/Участник:Komap" rel="noopener">Wikipedia</a> <a href="https://www.linkedin.com/in/mark-kahn-9309393/" rel="me noopener" aria-label="LinkedIn" title="LinkedIn" style="text-decoration:none;color:var(--muted);opacity:.5">·</a></footer>
   </main>
 </body>
