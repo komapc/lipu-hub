@@ -39,7 +39,8 @@
     summary:hover { color:var(--accent); } details ul { margin-top:12px; }
     .card.feature { position:relative; border-color:transparent; background:linear-gradient(var(--card),var(--card)) padding-box, linear-gradient(135deg,#8b5cf6,#ec4899,#f59e0b,#10b981) border-box; border:1.5px solid transparent; padding:18px 18px 16px; }
     .card.feature strong { font-size:1.15rem; background:linear-gradient(90deg,#8b5cf6,#ec4899,#f59e0b); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .card.feature .demo { margin-top:8px; font-size:1.25rem; color:var(--fg); direction:rtl; text-align:right; }
+    @font-face { font-family:"AlefMultiGender"; src:url("/fonts/AlefMultiGndr-Regular.woff") format("woff"); font-display:swap; }
+    .card.feature .demo { margin-top:8px; font-size:1.25rem; color:var(--fg); direction:rtl; font-family:"AlefMultiGender",sans-serif; text-align:right; }
     .card.feature:hover { box-shadow:0 4px 18px rgba(139,92,246,.25); }
     p.soon { color:var(--muted); margin:0; font-size:.95rem; }
     nav.links { display:flex; flex-wrap:wrap; gap:8px 20px; margin:0; }
