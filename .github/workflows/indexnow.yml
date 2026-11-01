@@ -18,14 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v6
         with:
           path: indexnow-state.json
           key: indexnow-${{ github.run_id }}
           restore-keys: indexnow-
       - run: python3 scripts/indexnow.py
       - if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v6
         with:
           path: indexnow-state.json
           key: indexnow-${{ github.run_id }}
