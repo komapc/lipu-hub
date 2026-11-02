@@ -17,7 +17,7 @@ import urllib.request
 KEY = "483e472b63ec64808ac4046f1b87eeb1"
 SITES = [
     "lipu.dev", "tradukilo.lipu.dev", "echodrift.lipu.dev", "hanzi.lipu.dev", "ideon.lipu.dev",
-    "minco.lipu.dev", "yearwheel.lipu.dev", "gova.lipu.dev", "noamba.lipu.dev", "yaplikacija.lipu.dev",
+    "minco.lipu.dev", "yearwheel.lipu.dev", "gova.lipu.dev", "noamba.lipu.dev", "nachalim.lipu.dev", "yaplikacija.lipu.dev",
 ]
 STATE = os.environ.get("INDEXNOW_STATE", "indexnow-state.json")
 UA = "Mozilla/5.0 (compatible; lipu-sites-check)"
