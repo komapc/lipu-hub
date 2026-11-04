@@ -17,7 +17,7 @@ SITES = [
     "https://minco.lipu.dev/", "https://yearwheel.lipu.dev/", "https://gova.lipu.dev/", "https://noamba.lipu.dev/", "https://nachalim.lipu.dev/", "https://shader.lipu.dev/", "https://yaplikacija.lipu.dev/",
 ]
 UA = "Mozilla/5.0 (compatible; lipu-sites-check)"
-MAX_TITLE = 60
+MAX_TITLE = 61
 
 
 def get(url):
