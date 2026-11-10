@@ -64,7 +64,7 @@
     .card a.name { color:inherit; text-decoration:none; display:flex; flex-direction:column; }
     .card a.name::after { content:""; position:absolute; inset:0; border-radius:12px; }
     .card a.name:focus-visible { outline:none; } .card a.name:focus-visible::after { outline:2px solid var(--accent); }
-    .card span { position:relative; z-index:1; cursor:text; }
+    .card span { position:relative; z-index:1; cursor:text; -webkit-user-select:text; user-select:text; } .card a.name { -webkit-user-drag:none; }
   </style>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ce99d514c84a4bc28cd41e9b435a3c70"}'></script>
 </head>
@@ -76,24 +76,24 @@
     <details>
       <summary><h2>Languages</h2></summary>
       <ul>
-          <li><div class="card"><a class="name" href="https://vortaro.lipu.dev/"><strong>Vortaro</strong><span>Ido–Esperanto dictionary, 37 000+ entries</span></a></div><a class="code" href="https://github.com/komapc/vortaro" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://tradukilo.lipu.dev/"><strong>Tradukilo</strong><span>Ido ↔ Esperanto machine translator (Apertium)</span></a></div><a class="code" href="https://github.com/komapc/ido-epo-translator" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://minco.lipu.dev/"><strong>min-co</strong><span>A minimal constructed language (conlang) of 45 meaning roots</span></a></div><a class="code" href="https://github.com/komapc/contlang" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://hanzi.lipu.dev/"><strong>Hanzi-burst</strong><span>Chinese characters broken down into radicals: learn hanzi by their parts</span></a></div><a class="code" href="https://github.com/komapc/hanzi-burst" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://echodrift.lipu.dev/"><strong>EchoDrift</strong><span>Atlas of sound changes: how sounds shift across languages</span></a></div><a class="code" href="https://github.com/komapc/phonomorph" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://yaplikacija.lipu.dev/"><strong>yaplikacija</strong><span>Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]</span></a></div><a class="code" href="https://github.com/komapc/yaplikacija" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://vortaro.lipu.dev/" draggable="false"><strong>Vortaro</strong><span>Ido–Esperanto dictionary, 37 000+ entries</span></a></div><a class="code" href="https://github.com/komapc/vortaro" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://tradukilo.lipu.dev/" draggable="false"><strong>Tradukilo</strong><span>Ido ↔ Esperanto machine translator (Apertium)</span></a></div><a class="code" href="https://github.com/komapc/ido-epo-translator" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://minco.lipu.dev/" draggable="false"><strong>min-co</strong><span>A minimal constructed language (conlang) of 45 meaning roots</span></a></div><a class="code" href="https://github.com/komapc/contlang" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://hanzi.lipu.dev/" draggable="false"><strong>Hanzi-burst</strong><span>Chinese characters broken down into radicals: learn hanzi by their parts</span></a></div><a class="code" href="https://github.com/komapc/hanzi-burst" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://echodrift.lipu.dev/" draggable="false"><strong>EchoDrift</strong><span>Atlas of sound changes: how sounds shift across languages</span></a></div><a class="code" href="https://github.com/komapc/phonomorph" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://yaplikacija.lipu.dev/" draggable="false"><strong>yaplikacija</strong><span>Pronunciation trainer for Russian Ы [ɨ] and Hebrew/Arabic Ain [ʕ]</span></a></div><a class="code" href="https://github.com/komapc/yaplikacija" rel="noopener">code</a></li>
       </ul>
     </details>
     <details>
       <summary><h2>Other</h2></summary>
       <ul>
-          <li><div class="card"><a class="name" href="https://ideon.lipu.dev/en/"><strong>Ideonology</strong><span>A theory of significance: measuring how ideas change other minds</span></a></div><a class="code" href="https://github.com/komapc/ideon" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://yearwheel.lipu.dev/"><strong>YearWheel</strong><span>Circular year calendar and planner that morphs between circle and square</span></a></div><a class="code" href="https://github.com/komapc/year-shape" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://gova.lipu.dev/"><strong>Gova</strong><span>GPS altimeter, clean and minimalist: your altitude above sea level (web and Android app)</span></a></div><a class="code" href="https://github.com/komapc/gova" rel="noopener">code</a></li>
-          <li><div class="card feature"><a class="name" href="https://noamba.lipu.dev/"><strong>noamba</strong><span>Gender-inclusive Hebrew (עברית רב-מגדרית) editor: write with extra letters for everyone and share as an image. Made together with Kobi.</span></a><span class="demo" lang="he">ברוכ׊׉ הבא׊׉!</span></div><a class="code" href="https://github.com/komapc/noamba" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://nachalim.lipu.dev/"><strong>Nachalim</strong><span>Map of Israel's streams (נחלי ישראל): click a stream to see its basin and where it flows</span></a></div><a class="code" href="https://github.com/komapc/nachalim" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://shader.lipu.dev/"><strong>shAIder</strong><span>AI shader generator: describe a 3D shader in words, and an AI writes the GLSL and renders it live</span></a></div><a class="code" href="https://github.com/komapc/shAIder" rel="noopener">code</a></li>
-          <li><div class="card"><a class="name" href="https://github.com/komapc/math-parser-comparison"><strong>Math parser comparison</strong><span>Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks</span></a></div><a class="code" href="https://github.com/komapc/math-parser-comparison" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://ideon.lipu.dev/en/" draggable="false"><strong>Ideonology</strong><span>A theory of significance: measuring how ideas change other minds</span></a></div><a class="code" href="https://github.com/komapc/ideon" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://yearwheel.lipu.dev/" draggable="false"><strong>YearWheel</strong><span>Circular year calendar and planner that morphs between circle and square</span></a></div><a class="code" href="https://github.com/komapc/year-shape" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://gova.lipu.dev/" draggable="false"><strong>Gova</strong><span>GPS altimeter, clean and minimalist: your altitude above sea level (web and Android app)</span></a></div><a class="code" href="https://github.com/komapc/gova" rel="noopener">code</a></li>
+          <li><div class="card feature"><a class="name" href="https://noamba.lipu.dev/" draggable="false"><strong>noamba</strong><span>Gender-inclusive Hebrew (עברית רב-מגדרית) editor: write with extra letters for everyone and share as an image. Made together with Kobi.</span></a><span class="demo" lang="he">ברוכ׊׉ הבא׊׉!</span></div><a class="code" href="https://github.com/komapc/noamba" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://nachalim.lipu.dev/" draggable="false"><strong>Nachalim</strong><span>Map of Israel's streams (נחלי ישראל): click a stream to see its basin and where it flows</span></a></div><a class="code" href="https://github.com/komapc/nachalim" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://shader.lipu.dev/" draggable="false"><strong>shAIder</strong><span>AI shader generator: describe a 3D shader in words, and an AI writes the GLSL and renders it live</span></a></div><a class="code" href="https://github.com/komapc/shAIder" rel="noopener">code</a></li>
+          <li><div class="card"><a class="name" href="https://github.com/komapc/math-parser-comparison" draggable="false"><strong>Math parser comparison</strong><span>Fifteen expression-parsing strategies in C++, Rust, Python and Haskell, with fuzzing and benchmarks</span></a></div><a class="code" href="https://github.com/komapc/math-parser-comparison" rel="noopener">code</a></li>
       </ul>
     </details>
     <details>
@@ -147,9 +147,12 @@ GCS/GM d? s-:-- a C++++ UL+++ P-- L++ E--- W+++ w- O- M- V-- PS+++ PE t--- R- !t
     var guess = (navigator.language || 'en').split('-')[0].toLowerCase();
     var cur = ['en', 'io', 'eo', 'tok'].indexOf(saved) >= 0 ? saved : ['io', 'eo', 'tok'].indexOf(guess) >= 0 ? guess : 'en';
     apply(cur);
-    // card text stays selectable (it sits above the card-wide link); a plain click on it still opens the project
+    // card text stays selectable (the link is not draggable, and a click that ends a selection does not follow it);
+    // a plain click anywhere on the card opens the project
     document.addEventListener('click', function (e) {
-      var c = e.target.closest('.card'); if (!c || e.target.closest('a') || !getSelection().isCollapsed) return;
+      var c = e.target.closest('.card'); if (!c) return;
+      if (!getSelection().isCollapsed) { if (e.target.closest('a.name')) e.preventDefault(); return; }
+      if (e.target.closest('a')) return;
       c.querySelector('a.name').click();
     });
     document.querySelector('nav.lang').addEventListener('click', function (e) {
