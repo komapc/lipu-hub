@@ -32,6 +32,16 @@ Show HN: weekdays, 16:00–18:00 Israel time (US morning). One HN post per week 
 | when approved | EchoDrift | r/phonetics | waiting for the join request |
 | when Mark says | Gova | r/SideProject | "Name - description" title |
 
+## Suggested, not planned
+
+Communities Reddit suggested or we looked at, with the verdict.
+
+| Project | Where | Source | Verdict |
+|---|---|---|---|
+| Hanzi Burst | r/browserextensions | Reddit repost suggestion | maybe later; small (~400 weekly visitors) |
+| Hanzi Burst | r/japaneseresources | Reddit repost suggestion | skip: Japanese media sub, the extension is mostly for Chinese |
+| EchoDrift | r/etymologymaps | Reddit repost suggestion | skip: maps only |
+
 ## Notes
 
 - Reddit texts are written by Mark; AI-sounding posts get removed.
