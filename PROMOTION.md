@@ -13,6 +13,7 @@ Where each project has been shared, and what is planned next. Not part of the si
 | 2026-11-14 | Gova | Google Play (production) | — | live, 177 countries |
 | 2026-11-14 | EchoDrift | r/historicallinguistics | _add link_ | 5 upvotes (day 1) |
 | 2026-11-14 | EchoDrift | r/phonetics | — | join request sent, waiting for approval |
+| 2026-11-14 | Hanzi Burst extension | r/chrome_extensions (Self Promotion) | _add link_ | posted with GIF (读 breakdown) |
 
 ## Planned
 
@@ -23,7 +24,8 @@ Show HN: weekdays, 16:00–18:00 Israel time (US morning). One HN post per week 
 | 2026-11-16 (Mon) | EchoDrift | r/conlangs | separate post, framed for diachronic conlanging |
 | 2026-11-17 (Tue) | math-parser-comparison | Show HN | ready (public repo) |
 | 2026-11-19 (Thu) | EchoDrift | r/etymology | visual, word-focused post (e.g. *pater → father*), EchoDrift as source link |
-| 2026-11-21 (Sat) | Hanzi Burst | r/webdev Showoff Saturday or r/chrome_extensions | one project per Saturday |
+| 2026-11-18 (Wed) | Hanzi Burst | r/FirefoxAddons | same GIF, AMO link first; Reddit offered this repost |
+| 2026-11-21 (Sat) | _free slot_ | r/webdev Showoff Saturday | one project per Saturday |
 | 2026-11-24 (Tue) | EchoDrift | Show HN | after fixing what Reddit found |
 | 2026-12-01 (Tue) | shower-protocol | Show HN (article) | repo public + English README + GIF of `index.html` |
 | 2026-12-04 (Fri) | Hanzi Burst | r/languagelearning "Share Your Resources" sticky | sticky appears on the 4th; once per 6 months |
