@@ -81,6 +81,8 @@
     eo: { msg: 'Ni uzas Google Analytics (kuketojn) por kalkuli vizitojn.', more: 'Vi povas malaliĝi iam ajn.', allow: 'Permesi', decline: 'Rifuzi', ok: 'Bone', optOut: 'Malaliĝi', details: 'Detaloj' },
     io: { msg: 'Ni uzas Google Analytics (kuketi) por kontar viziti.', more: 'Vu povas refuzar ulatempe.', allow: 'Permisar', decline: 'Refuzar', ok: 'Bone', optOut: 'Refuzar', details: 'Detali' },
     ru: { msg: 'Мы используем Google Analytics (cookie), чтобы считать посещения.', more: 'Отказаться можно в любой момент.', allow: 'Разрешить', decline: 'Отказаться', ok: 'OK', optOut: 'Отказаться', details: 'Подробнее' },
+    uk: { msg: 'Ми використовуємо Google Analytics (cookie), щоб рахувати відвідування.', more: 'Відмовитися можна будь-коли.', allow: 'Дозволити', decline: 'Відмовитися', ok: 'OK', optOut: 'Відмовитися', details: 'Докладніше' },
+    be: { msg: 'Мы выкарыстоўваем Google Analytics (cookie), каб лічыць наведванні.', more: 'Адмовіцца можна ў любы момант.', allow: 'Дазволіць', decline: 'Адмовіцца', ok: 'OK', optOut: 'Адмовіцца', details: 'Падрабязней' },
     he: { msg: 'אנחנו משתמשים ב־Google Analytics (עוגיות) כדי לספור ביקורים.', more: 'אפשר לבטל בכל עת.', allow: 'אישור', decline: 'דחייה', ok: 'הבנתי', optOut: 'ביטול', details: 'פרטים' }
   };
 
