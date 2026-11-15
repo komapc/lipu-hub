@@ -21,4 +21,4 @@ Code and site content: MIT ([`LICENSE`](LICENSE)).
 <a href="#" data-lipu-consent-open>Analytics settings</a>
 ```
 
-In opt-in regions (and when the check fails) it shows Allow/Decline and loads nothing until Allow. Elsewhere it loads GA at once and shows a one-time notice with Opt out. The choice lives in the site's own `localStorage["lipu-consent"]`. `data-msg` replaces the banner text; built-in texts cover en, eo, io, ru and he (picked by `<html lang>`).
+In opt-in regions (and when the check fails) it shows Allow/Decline and loads nothing until Allow. Elsewhere it loads GA at once and shows a one-time notice with Opt out. The choice lives in the site's own `localStorage["lipu-consent"]`. `data-msg` replaces the banner text, `data-privacy` adds a Details link to the site's privacy page; built-in texts cover en, eo, io, ru and he (picked by `<html lang>`).

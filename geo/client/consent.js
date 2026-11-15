@@ -5,6 +5,7 @@
      data-ga      GA4 Measurement ID (required; without it the script does nothing)
      data-accent  button colour, any CSS colour or var(...) (default #4f46e5)
      data-msg     banner text in the page language, replacing the built-in one
+     data-privacy URL of the site's privacy page; adds a "Details" link to the banner
 
    The choice is kept per site in localStorage "lipu-consent" ("yes" | "no"), the same
    key the per-site copies used, so earlier choices carry over. window.gtag exists only
@@ -26,6 +27,7 @@
   if (!GA || window.lipuConsent) return;
   var ACCENT = (me.dataset.accent || '#4f46e5').replace(/[;{}<>]/g, '');
   var MSG = me.dataset.msg;
+  var PRIVACY = me.dataset.privacy;
   var KEY = 'lipu-consent';
   var NOTICE_KEY = 'lipu-consent-notice';
   var GEO_URL = 'https://geo.lipu.dev/';
@@ -75,11 +77,11 @@
   }
 
   var T = {
-    en: { msg: 'We use Google Analytics (cookies) to count visits.', more: 'You can opt out at any time.', allow: 'Allow', decline: 'Decline', ok: 'OK', optOut: 'Opt out' },
-    eo: { msg: 'Ni uzas Google Analytics (kuketojn) por kalkuli vizitojn.', more: 'Vi povas malaliĝi iam ajn.', allow: 'Permesi', decline: 'Rifuzi', ok: 'Bone', optOut: 'Malaliĝi' },
-    io: { msg: 'Ni uzas Google Analytics (kuketi) por kontar viziti.', more: 'Vu povas refuzar ulatempe.', allow: 'Permisar', decline: 'Refuzar', ok: 'Bone', optOut: 'Refuzar' },
-    ru: { msg: 'Мы используем Google Analytics (cookie), чтобы считать посещения.', more: 'Отказаться можно в любой момент.', allow: 'Разрешить', decline: 'Отказаться', ok: 'OK', optOut: 'Отказаться' },
-    he: { msg: 'אנחנו משתמשים ב־Google Analytics (עוגיות) כדי לספור ביקורים.', more: 'אפשר לבטל בכל עת.', allow: 'אישור', decline: 'דחייה', ok: 'הבנתי', optOut: 'ביטול' }
+    en: { msg: 'We use Google Analytics (cookies) to count visits.', more: 'You can opt out at any time.', allow: 'Allow', decline: 'Decline', ok: 'OK', optOut: 'Opt out', details: 'Details' },
+    eo: { msg: 'Ni uzas Google Analytics (kuketojn) por kalkuli vizitojn.', more: 'Vi povas malaliĝi iam ajn.', allow: 'Permesi', decline: 'Rifuzi', ok: 'Bone', optOut: 'Malaliĝi', details: 'Detaloj' },
+    io: { msg: 'Ni uzas Google Analytics (kuketi) por kontar viziti.', more: 'Vu povas refuzar ulatempe.', allow: 'Permisar', decline: 'Refuzar', ok: 'Bone', optOut: 'Refuzar', details: 'Detali' },
+    ru: { msg: 'Мы используем Google Analytics (cookie), чтобы считать посещения.', more: 'Отказаться можно в любой момент.', allow: 'Разрешить', decline: 'Отказаться', ok: 'OK', optOut: 'Отказаться', details: 'Подробнее' },
+    he: { msg: 'אנחנו משתמשים ב־Google Analytics (עוגיות) כדי לספור ביקורים.', more: 'אפשר לבטל בכל עת.', allow: 'אישור', decline: 'דחייה', ok: 'הבנתי', optOut: 'ביטול', details: 'פרטים' }
   };
 
   var close = null;
@@ -95,7 +97,7 @@
     st.textContent = '#lipu-consent{position:fixed;left:12px;right:12px;bottom:12px;max-width:560px;margin:0 auto;padding:12px 14px;' +
       'background:#fff;color:#1f1b16;border:1px solid #cfc6b6;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.18);' +
       'font:14px/1.4 system-ui,sans-serif;z-index:2147483000;display:flex;flex-wrap:wrap;gap:8px;align-items:center}' +
-      '#lipu-consent span{flex:1 1 220px}#lipu-consent button{font:inherit;padding:6px 12px;border-radius:8px;cursor:pointer;' +
+      '#lipu-consent a{color:inherit}#lipu-consent span{flex:1 1 220px}#lipu-consent button{font:inherit;padding:6px 12px;border-radius:8px;cursor:pointer;' +
       'border:1px solid ' + ACCENT + ';background:none;color:inherit}#lipu-consent button.y{background:' + ACCENT + ';color:#fff}' +
       '@media(max-width:480px){#lipu-consent span{flex-basis:100%}}' +
       '@media(prefers-color-scheme:dark){#lipu-consent{background:#1e1b16;color:#f1ebe0;border-color:#5a5144}}';
@@ -114,6 +116,10 @@
     };
     n.onclick = function () { set(KEY, 'no'); unload(); close(); };
     d.append(sp, y, n);
+    if (PRIVACY) {
+      var a = document.createElement('a'); a.href = PRIVACY; a.textContent = t.details;
+      d.append(a);
+    }
     document.head.appendChild(st);
     document.body.appendChild(d);
   }
