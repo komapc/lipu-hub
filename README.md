@@ -9,3 +9,7 @@ Hub site for https://lipu.dev — links to the projects hosted on its subdomains
 ## License
 
 Code and site content: MIT ([`LICENSE`](LICENSE)).
+
+## geo.lipu.dev
+
+`geo/` is a separate Worker (`lipu-geo`) that tells lipu.dev sites and daatan.com whether a visitor needs a cookie-consent banner. `GET https://geo.lipu.dev/` returns `{"consentRequired": true|false}` from Cloudflare's country lookup: true for the EU/EEA (with territories that have their own country codes), the UK with Gibraltar and the Crown dependencies, Switzerland, and for any unknown country. No cookies, `Cache-Control: no-store`. Deploy with `cd geo && npx wrangler deploy`.
