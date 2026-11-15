@@ -1,3 +1,5 @@
+import CONSENT_JS from './client/consent.js';
+
 // geo.lipu.dev — tells a page whether to show a cookie-consent banner.
 // Returns only {"consentRequired": true|false}. No cookies, no logging of the
 // visitor's IP beyond what Cloudflare does for any request.
@@ -36,6 +38,15 @@ export function consentRequired(country) {
 export default {
   async fetch(request) {
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: HEADERS });
+    const isGet = request.method === 'GET' || request.method === 'HEAD';
+    if (isGet && new URL(request.url).pathname === '/consent.js') {
+      return new Response(CONSENT_JS, { headers: {
+        'content-type': 'text/javascript; charset=utf-8',
+        'cache-control': 'public, max-age=3600',
+        'access-control-allow-origin': '*',
+        'x-content-type-options': 'nosniff',
+      } });
+    }
     if (request.method !== 'GET') return new Response('Method not allowed', { status: 405, headers: HEADERS });
     const country = request.cf && request.cf.country;
     return new Response(JSON.stringify({ consentRequired: consentRequired(country) }), { headers: HEADERS });
