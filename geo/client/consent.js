@@ -20,7 +20,10 @@
 
    To let visitors change their choice, add an element with data-lipu-consent-open
    (e.g. <a href="#" data-lipu-consent-open>Analytics settings</a>) or call
-   window.lipuConsent.open(). Opting out stops GA and deletes its _ga cookies. */
+   window.lipuConsent.open(). Opting out stops GA and deletes its _ga cookies.
+
+   page_location and page_referrer are sent without the q and t query parameters (PRIVATE_PARAMS):
+   they hold search queries and user text on lipu.dev sites. */
 (function () {
   var me = document.currentScript;
   var GA = me && me.dataset.ga;
@@ -35,6 +38,18 @@
   var get = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
   var set = function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} };
 
+  // Query parameters that can carry what the visitor typed or selected: ?q= (site search) and ?t= (text the
+  // hanzi-burst extension sends to the site). GA would get them in page_location / page_referrer, so they are
+  // removed from both before the first hit (security audit 2026-11-16).
+  var PRIVATE_PARAMS = ['q', 't'];
+  function scrub(u) {
+    try {
+      var x = new URL(u, location.href), hit = false;
+      PRIVATE_PARAMS.forEach(function (p) { if (x.searchParams.has(p)) { x.searchParams.delete(p); hit = true; } });
+      return hit ? x.href : u;
+    } catch (e) { return u; }
+  }
+
   function load() {
     window['ga-disable-' + GA] = false;
     if (window.__gaLoaded) return;
@@ -46,7 +61,9 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', GA, { anonymize_ip: true });
+    var cfg = { anonymize_ip: true, page_location: scrub(location.href) };
+    if (document.referrer) cfg.page_referrer = scrub(document.referrer);
+    window.gtag('config', GA, cfg);
   }
 
   // Stops further hits from an already-loaded GA and deletes its cookies.
