@@ -31,6 +31,7 @@ Show HN: weekdays, 16:00–18:00 Israel time (US morning). One HN post per week 
 | 2026-12-04 (Fri) | Hanzi Burst | r/languagelearning "Share Your Resources" sticky | sticky appears on the 4th; once per 6 months |
 | when approved | EchoDrift | r/phonetics | waiting for the join request |
 | when Mark says | Gova | r/SideProject | "Name - description" title |
+| TBD (reminder 2026-11-19) | math-parser-comparison: "beat my parser" challenge (C++/Python) | Show HN, then r/cpp 1–2 days later; maybe Lobsters / Habr | not started. Needs CHALLENGE.md, a submission interface and a CI leaderboard first, 3–4 week deadline. Decide whether it replaces the plain 2026-11-17 Show HN or follows it (one HN post per week; a second Show HN for the same repo needs a real new angle) |
 
 ## Suggested, not planned
 
