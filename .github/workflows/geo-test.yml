@@ -1,0 +1,38 @@
+name: geo-test
+
+# Tests for geo.lipu.dev: the region check in geo/worker.js and the consent banner in
+# geo/client/consent.js that every lipu.dev site loads. Deploy stays manual (README).
+on:
+  push:
+    branches: [main]
+    paths: ["geo/**", ".github/workflows/geo-test.yml"]
+  pull_request:
+    paths: ["geo/**", ".github/workflows/geo-test.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: geo
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: geo/package-lock.json
+      - run: npm ci
+      - run: npm run test:worker
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:consent
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: playwright-results
+          path: geo/test-results/
+          retention-days: 7

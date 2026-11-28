@@ -22,3 +22,5 @@ Code and site content: MIT ([`LICENSE`](LICENSE)).
 ```
 
 In opt-in regions (and when the check fails) it shows Allow/Decline and loads nothing until Allow. Elsewhere it loads GA at once and shows a one-time notice with Opt out. The choice lives in the site's own `localStorage["lipu-consent"]`. `data-msg` replaces the banner text, `data-privacy` adds a Details link to the site's privacy page; built-in texts cover en, eo, io, ru, uk, be and he (picked by `<html lang>`).
+
+Tests (`cd geo && npm ci && npm test`, also run by `.github/workflows/geo-test.yml` on every change under `geo/`): `test/worker.test.js` checks the country list and the worker's responses with `node:test`; `test/consent.spec.js` runs `consent.js` in Chromium with Playwright, with geo.lipu.dev and Google faked, and checks that GA loads only after Allow or a literal `{"consentRequired": false}`, that any failure of the check asks first, that Decline and Opt out stick, and that `q`/`t` never reach GA. Run `npm test` before `npx wrangler deploy`.
